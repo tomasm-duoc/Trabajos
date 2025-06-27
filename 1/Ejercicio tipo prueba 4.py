@@ -2,18 +2,18 @@ estudiantes = {
     "lista":
     [
         {
-            "id": "1",
+            "id": "d23afd",
             "nombre": "nombre1",
             "apellido": "apellido1",
-            "genero": "N/A",
+            "genero": "M",
             "promedio": 0.0
         },
         {
-            "id": "2",
+            "id": "2P4Gfd",
             "nombre": "nombre2",
             "apellido": "apellido2",
-            "genero": "N/A",
-            "promedio": 0.0
+            "genero": "F",
+            "promedio": 1.0
         }
     ]
 }
@@ -104,6 +104,9 @@ while True:
     if opcion == 1:
         while True:    
             id = verificacion_string("\nIngrese la ID del nuevo estudiante: ")
+            if len(id) > 6:
+                print("\nERROR - La ID no puede ser tener mas de 6 caracteres de largo")
+                continue
             verificacion_id = mostrar_estudiantes(id)
             if verificacion_id == False:
                 print("ID valida!")
@@ -156,6 +159,9 @@ while True:
     #opc 2 Buscar
     elif opcion == 2:
         id = verificacion_string("Ingrese la ID del estudiante que desea buscar: ")
+        if len(id) > 6:
+            print("\nERROR - La ID no puede ser tener mas de 6 caracteres de largo")
+            continue
         if mostrar_estudiantes(id) == False:
             print("\nERROR - ID no encontrada. Revise los datos proporcionados.")          
          
@@ -163,6 +169,9 @@ while True:
     elif opcion == 3:
         while True:
             id = verificacion_string("Ingrese la ID del estudiante que desea modificar: ")
+            if len(id) > 6:
+                print("\nERROR - La ID no puede ser tener mas de 6 caracteres de largo")
+                continue
             estudiante = mostrar_estudiantes(id)
             if estudiante == False:
                 print("\nERROR - ID no encontrada. Revise los datos proporcionados.")
@@ -202,6 +211,9 @@ while True:
     #opc 4 ELiminar
     elif opcion == 4:
         id = verificacion_string("Ingrese la ID del estudiante que desea eliminar: ")
+        if len(id) > 6:
+            print("\nERROR - La ID no puede ser tener mas de 6 caracteres de largo")
+            continue
         estudiante_eliminar = mostrar_estudiantes(id)
         if estudiante_eliminar == False:
             print("\nERROR - ID no encontrada. Revise los datos proporcionados.")   
